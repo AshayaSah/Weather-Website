@@ -6,14 +6,174 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Weather Website</title>
 </head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+body{
+    background-color: #1e1e1e;
+    color: #171717;
+}
+
+.container{
+    width: 60%;
+    background-color: #fff;
+    padding: 2rem;
+    margin: 4rem auto;
+    border-radius: 10px;
+}
+
+/*Header*/
+.location_search {
+    position: relative;
+    margin-left: 10px;
+}
+
+.search_input{
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    z-index: 1;
+
+    height: 40px;
+    width: 300px;
+    padding: 0.5rem 2.5rem;
+
+    background-color:#1e1e1e;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+input::placeholder{
+    color: #fff;
+    opacity: 0.7;
+}
+.fa-magnifying-glass{
+    color:#fff;
+    position: relative;
+    z-index: 2;
+}
+
+.extra_details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-top: 3rem;
+}
+
+.weather_card {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  background-color: #f7f7f7;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.weather_card i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.weather_card p {
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 936px) {
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .weather_units {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .extra_details {
+    grid-template-columns: none;
+  }
+}
+
+</style>
+
+
 <body>
     <section class="container">
         <div class="header">
             <form class="location_search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i id="search_icon" class="fa-solid fa-magnifying-glass"></i>
                 <input class="search_input" placeholder="search your city ..."/>
             </form>
         </div>
+        <div class="main_body">
+            <h1 class="city_name"></h1>
+            <p class="city_date_time"></p>
+            <div class="forecast"></div>
+            <div class="weather_icon"></div>
+            <h1 class="temperature"></h1>
+            <div class="min_max">
+                <p class="min"></p>
+                <p class="max"></p>
+            </div>
+        </div>
+        <div class="extra_details">
+            <div class="weather_card a1">
+                <i class="fa-solid fa-temperature-half"></i>
+                <div>
+                    <p>Feels Like</p>
+                    <p class="feels_like">whatever</p>
+                </div>
+            </div>
+            <div class="weather_card a2">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <p>Humidity</p>
+                    <div class="humidity"></div>
+                </div>
+            </div>
+            <div class="weather_card a3">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                    <p>Wind</p>
+                    <div class="wind"></div>
+                </div>
+            </div>
+            <div class="weather_card a4">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Pressure</p>
+                    <div class="pressure"> </div>
+                </div>
+            </div>
+        </div>
     </section>
+<script>
+
+
+
+    
+</script>
+
 </body>
 </html>
