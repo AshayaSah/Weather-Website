@@ -56,7 +56,7 @@ citySearch.addEventListener('submit', (e) => {
     //calls the data fetching and loading function with updated city name
     getWeatherData();
 
-    earchInput.value = '';
+    searchInput.value = '';
 });
 
 //Fetch and displays the data from api 
