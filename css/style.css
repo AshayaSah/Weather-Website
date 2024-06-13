@@ -93,6 +93,7 @@ input::placeholder{
   color: #fff;
   /* color: #171717; */
   display: inline-block;
+  margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 30px;
 }

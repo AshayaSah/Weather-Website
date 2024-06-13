@@ -13,6 +13,9 @@ let humidity = document.querySelector(".humidity");
 let w_wind = document.querySelector(".wind");
 let pressure = document.querySelector(".pressure");
 
+//input reference
+let citySearch = document.querySelector(".location_search");
+
 //geting the actual country name 
 const actualCountryName = (code) => {
     return new Intl.DisplayNames([code], { type: 'region' }).of(code);
@@ -38,9 +41,28 @@ const getDateTime = (dt) => {
 const getTempInCelsius = (temp) => {
     return (temp - 273.15).toFixed(2);
 }
- 
+
+//search functionality
+let city = 'kathmandu';
+
+citySearch.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //gets the search value from the search bar
+    let searchInput = document.querySelector(".search_input");
+    //updates the city name
+    city = searchInput.value;
+
+    //calls the data fetching and loading function with updated city name
+    getWeatherData();
+
+    earchInput.value = '';
+});
+
+//Fetch and displays the data from api 
 const getWeatherData = async () => {
-    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=kathmandu&appid=261976157224512c5031d09973b2690df";
+
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=261976157224512c5031d09973b2690d`;
 
     try{
         const res = await fetch(apiURL);
@@ -77,6 +99,7 @@ const getWeatherData = async () => {
 
     }catch (error){
         console.log(error);
+        // alert("Entered city is not found! 404");
     }
 }
 
