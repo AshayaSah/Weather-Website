@@ -99,7 +99,7 @@ const getWeatherData = async () => {
 
     }catch (error){
         console.log(error);
-        // alert("Entered city is not found! 404");
+        alert("Entered city is not found! 404");
     }
 }
 
